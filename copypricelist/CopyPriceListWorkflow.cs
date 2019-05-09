@@ -43,7 +43,8 @@ namespace CRMFortress.CopyPriceList
 
             FilterExpression productPriceLevelFilterExpression = new FilterExpression();
             productPriceLevelFilterExpression.Conditions.Add(new ConditionExpression("pricelevelid", ConditionOperator.Equal, currentPriceLevelEntity["pricelevelid"]));
-
+            productPriceLevelFilterExpression.Conditions.Add(new ConditionExpression("statecode", ConditionOperator.Equal, 0)); // Active
+            
             productPriceLevelExpression.ColumnSet = new ColumnSet(true);
             productPriceLevelExpression.Criteria = productPriceLevelFilterExpression;
 
